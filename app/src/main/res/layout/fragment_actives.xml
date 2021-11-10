@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="@color/colorAccent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.actives.ActivesFragment">
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/shimmer">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <include layout="@layout/actives_item"/>
+            <include layout="@layout/actives_item"/>
+            <include layout="@layout/actives_item"/>
+            <include layout="@layout/actives_item"/>
+            <include layout="@layout/actives_item"/>
+            <include layout="@layout/actives_item"/>
+            <include layout="@layout/actives_item"/>
+            <include layout="@layout/actives_item"/>
+            <include layout="@layout/actives_item"/>
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/swipe"
+        >
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:id="@+id/actives_list"/>-->
+        <com.mlsdev.animatedrv.AnimatedRecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:animationDuration="600"
+            app:layoutManagerOrientation="vertical"
+            app:layoutAnimation="@anim/layout_animation_from_bottom_scale"
+            android:id="@+id/actives_list">
+        </com.mlsdev.animatedrv.AnimatedRecyclerView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</FrameLayout>
